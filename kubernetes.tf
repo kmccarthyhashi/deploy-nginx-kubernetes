@@ -97,6 +97,18 @@ resource "kubernetes_deployment" "nginx" {
               memory = "50Mi"
             }
           }
+          liveness_probe {
+            http_get {
+              path = "/"
+              port = 80
+
+              http_header {
+                name = "X-Custom Header"
+                value = "Awesome"
+              }
+            }
+          }
+          
         }
       }
     }
