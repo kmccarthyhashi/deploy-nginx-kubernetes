@@ -1,4 +1,12 @@
 terraform {
+
+  cloud {
+    organization = "KELLY-training"
+    workspaces {
+      name = "eks-cluster"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -26,6 +34,8 @@ data "terraform_remote_state" "eks" {
 # Retrieve EKS cluster information
 provider "aws" {
   region = "us-east-2"
+  #access_key = "ASIAWQDBY64J6HXKI5TV"
+  #secret_key = "UYzUahXMm1E0KbD66+BBBXBCR5q8j79Qr0I68Unf"
 }
 
 data "aws_eks_cluster" "cluster" {
