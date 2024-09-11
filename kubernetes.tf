@@ -3,7 +3,7 @@ terraform {
   cloud {
     organization = "KELLY-training"
     workspaces {
-      name = "eks-cluster"
+      name = "deploy-nginx-kubernetes"
     }
   }
 
