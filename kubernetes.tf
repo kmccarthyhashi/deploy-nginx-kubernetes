@@ -1,6 +1,5 @@
 terraform {
 
-# TEST
 
   cloud {
     organization = "KELLY-training"
